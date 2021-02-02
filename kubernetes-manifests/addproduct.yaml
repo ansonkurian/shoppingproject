@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: addproduct
+  labels:
+    app: addproduct
+    software: addproduct
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: addproduct
+  template:
+    metadata:
+      name: addproduct-pod
+      labels:
+        app: addproduct
+    spec:
+      containers:
+        - image: addproduct
+          name: addproduct
+          ports:
+            - name: http
+              containerPort: 80
+          env:
+            - name: DBHOST
+              value: mysql-service
+            - name: DBUSER
+              value: anson
+            - name: DBPASSWORD
+              value: Anson@123
