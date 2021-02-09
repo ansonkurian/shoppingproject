@@ -20,8 +20,6 @@ build:
   # must provide a "default repo" using one of the methods described
   # here:
   # https://skaffold.dev/docs/concepts/#image-repository-handling
-  - image: addproduct
-    context: src/addproduct
   - image: emailservice
     context: src/emailservice
   - image: productcatalogservice
