@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: shippingservice
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: shippingservice
